@@ -4,7 +4,6 @@
 
 extern WebServer server;
 
-
 void setupServer();
 void handleHeartbeat();
 void handleLEDOn();
