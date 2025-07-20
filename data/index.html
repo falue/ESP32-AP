@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESP32 AP TEST</title>
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+    <h1>LED Control</h1>
+    <p>
+      <button onclick="toggleLED('on')">Turn On</button>
+      <button onclick="toggleLED('off')">Turn Off</button>
+      <br>
+      LED status:<p id="ledStatus">initial</p>
+    </p>
+    
+    <h1>Heartbeat (every 1s)</h1>
+    <p><code id="heartbeat">unknown (initial)</code></p>
+    
+    <h1>Some X/Y range controls</h1>
+    <p>
+      <input type="range" min="0" max="270" oninput="setAngle('x', this.value)">
+      <code id="range-x">X initial</code>
+      <br>
+      <input type="range" min="0" max="270" oninput="setAngle('y', this.value)">
+      <code id="range-y">Y initial</code>
+    </p>
+    
+    <script src="/script.js"></script>
+  </body>
+</html>
