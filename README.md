@@ -15,9 +15,11 @@ If you fetch any of these urls, an appropriate handler is called and will do stu
     /setAngle?y=270&x=66
 ```
 
-Other paths are treated as files (for isntance, `/style.css` or `script.js`)
+Other paths are treated as files (for instance, `/style.css` or `script.js`)
+
+Every static file is set to be non-caching for like less headache.
 
 ## Flash + Upload website:
-0. if any scripts running, close all previously running platformio actions
+0. if any platformio scripts are running, kill all of them
 1. platformio plugin > "Upload Filesystem Image" (updates website in `/data`)
 2. platformio plugin > "Upload and Monitor" (updates code in `/src` and shows monitoring log)
