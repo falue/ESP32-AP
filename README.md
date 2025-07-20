@@ -23,3 +23,5 @@ Every static file is set to be non-caching for like less headache.
 0. if any platformio scripts are running, kill all of them
 1. platformio plugin > "Upload Filesystem Image" (updates website in `/data`)
 2. platformio plugin > "Upload and Monitor" (updates code in `/src` and shows monitoring log)
+
+For debugging the website part, open `/data` in a new IDE window and start a development server there. Otherwise the absolute paths won't work while developing.
