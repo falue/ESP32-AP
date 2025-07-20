@@ -1,4 +1,5 @@
 // main.cpp
+#include <Arduino.h>
 #include <WiFi.h>
 #include <WebServer.h>
 #include <SPIFFS.h>
@@ -6,10 +7,16 @@
 
 WebServer server(80);
 
+#define LED_PIN 13
+
+void setLED(boolean status) {
+  digitalWrite(LED_PIN, status);
+}
+
 void setup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, LOW);
+  setLED(true);
   setupServer();
 }
 

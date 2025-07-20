@@ -1,11 +1,12 @@
 // server_handlers.cpp
 #include "server_handlers.h"
+#include "main.h"
 #include <Arduino.h>
 #include <SPIFFS.h>
 #include <map>
 
 const char *ssid = "ESP32-AP";
-const char *password = "12345678";
+const char *password = "12345678";  // Please change me
 
 void setupServer()
 {
@@ -54,14 +55,16 @@ void handleHeartbeat()
 void handleLEDOn()
 {
     Serial.println("handleLED: On");
-    digitalWrite(LED_PIN, HIGH);
+    // digitalWrite(LED_PIN, HIGH);
+    setLED(true);
     server.send(200, "text/plain", "true");
 }
 
 void handleLEDOff()
 {
     Serial.println("handleLED: Off");
-    digitalWrite(LED_PIN, LOW);
+    // digitalWrite(LED_PIN, LOW);
+    setLED(false);
     server.send(200, "text/plain", "false");
 }
 
@@ -81,6 +84,9 @@ void handleAngle()
             json += ",";
     }
     json += "}";
+    // Return OK
+    // server.send(200, "text/plain", "OK");
+    // Return a JSON
     server.send(200, "application/json", json);
 }
 
