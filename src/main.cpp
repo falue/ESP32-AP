@@ -16,8 +16,8 @@ void setLED(boolean status) {
 void setup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
-  setLED(true);
   setupServer();
+  setLED(true);
 }
 
 void loop() {
